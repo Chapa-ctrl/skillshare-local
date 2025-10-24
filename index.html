@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Helping connect volunteers and neighbors through the Community Helper App.">
+    <meta name="keywords" content="community, volunteering, helper app, local support, service">
+    <meta name="author" content="Your Name">
+
+    <!-- Open Graph Meta Tags (Social Media Preview) -->
+    <meta property="og:title" content="Community Helper App">
+    <meta property="og:description"
+        content="Join our community and make a difference! Learn more about local volunteer opportunities.">
+    <meta property="og:image" content="https://chapa-ctrl.io/skillshare-local/og_image.jpg">
+    <meta property="og:url" content="https://Chapa-ctrl.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Community Helper App">
+    <meta name="twitter:description" content="A simple way to connect with community service opportunities.">
+    <meta name="twitter:image" content="https://chapa-ctrl.io/skillshare-local/X-image.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+
+    <!-- Page Title -->
+    <title>SkillShare Local</title>
+
+    <!-- Fonts & Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- NAV (fixed) -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">SkillShare Local</div>
+            <ul class="nav-right">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how">How</a></li>
+                <li><a href="#people">Find People</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <h1>Learn. Teach. Grow Together.</h1>
+            <p>Connect with people near you to trade skills and knowledge — for free.</p>
+            <button id="getStartedBtn" class="btn-primary">Get Started</button>
+        </div>
+        <div class="hero-right">
+            <img src="https://orangewoodguitars.com/cdn/shop/articles/header_2000x.jpg?v=1623445220" alt="hero" />
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="two-col">
+        <div class="col image">
+            <img src="https://bunny-wp-pullzone-3xue3q6yzy.b-cdn.net/wp-content/uploads/2024/11/EM-BLOG-corporate-communication-skills-513368437.png"
+                alt="about">
+        </div>
+        <div class="col text">
+            <h2>About SkillShare Local</h2>
+            <p>People teach and learn skills from each other in their neighborhood — cooking, coding, music, tutoring
+                and more. You share what you know and learn what you want.</p>
+        </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="how">
+        <h2>How It Works</h2>
+        <div class="how-grid">
+            <div class="step"><img
+                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29uJTIwdXNpbmclMjBjb21wdXRlcnxlbnwwfHwwfHx8MA%3D%3D">
+                <p>Sign up and create a profile</p>
+            </div>
+            <div class="step"><img
+                    src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy81NjcwODMyMS9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTc4Mjg1MDMzOX0.Ut3hEzDDzmIMIY8ypcYNY1M36WSFmsCs73Kg75A3XhM/img.png?width=800&quality=50">
+                <p>Find someone who has a skill you want</p>
+            </div>
+            <div class="step"><img
+                    src="https://images.pexels.com/photos/5908491/pexels-photo-5908491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <p>Swap lessons and learn together</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PEOPLE FINDER -->
+    <section id="people" class="people">
+        <h2>Find People Near You</h2>
+        <div id="people-container" class="people-grid"></div>
+
+        <div class="pagination" id="pagination-controls">
+            <button id="prevBtn" class="page-btn">Prev</button>
+            <div id="page-buttons" class="page-buttons"></div>
+            <button id="nextBtn" class="page-btn">Next</button>
+        </div>
+    </section>
+
+    <!-- POPUP FORM -->
+    <div id="formPopup" class="popup-overlay" aria-hidden="true">
+        <div class="popup-panel" role="dialog" aria-modal="true">
+            <button id="closePopup" class="close-x" aria-label="Close">&times;</button>
+            <h3>Join SkillShare Local</h3>
+
+            <form id="signupForm" action="https://formsubmit.co/your@email.com" method="POST" class="popup-form">
+                <input name="firstName" type="text" placeholder="First name" required />
+                <input name="lastName" type="text" placeholder="Last name" required />
+                <input name="email" type="email" placeholder="Email" required />
+                <input name="skill" type="text" placeholder="Your skill" required />
+                <input name="age" type="number" placeholder="Age" required />
+                <textarea name="description" placeholder="Short description" required></textarea>
+                <input type="hidden" name="_captcha" value="false" />
+                <button type="submit" class="btn-primary">Submit</button>
+                <p id="signupMsg" class="inline-msg" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3>SkillShare Local</h3>
+                <p>Connecting people through skills. Learn, share, and grow together.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#people">Find People</a></li>
+                    <li><a href="#how">How It Works</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <form id="newsletterForm" action="https://formsubmit.co/student.162924@worcesterschools.net"
+                    method="POST" class="newsletter-form">
+                    <input name="newsletterEmail" type="email" placeholder="Your email" required />
+                    <button type="submit" class="btn-accent">Subscribe</button>
+                    <p id="newsletterMsg" class="inline-msg" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+        <p class="copyright">© 2025 SkillShare Local. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
